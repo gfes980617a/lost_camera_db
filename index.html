@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <script src='./sql.js'></script>
+    <script src='./sql-db.js'></script>
+    <script>init_sqljs();document.getElementById("search_butt_td").innerHTML = "<input id='search_butt' class='search' type='button' onclick='search_butt()' value='開始搜尋' disabled/>";
+    </script>
+</head>
+
+<body>
+    <br /><h2 align="center">遺失器材(相機/鏡頭/配件)序號列表</h2>
+    <p  align="center"><a href="https://github.com/gfes980617a/lost_camera_db">資料庫@github</a>
+        <span id="load_db"></span>
+        最後更新時間<span id="db_date">0000-00-00</span> 共<span id="db_count">0</span>筆資料</p>
+    <table id="ItemTable" align="center" border="1">
+        <thead>
+            <tr>
+                <td>品牌</td>
+                <td>名稱</td>
+                <td>序號</td>
+                <td>日期</td>
+                <td>來源</td>
+            </tr>
+            <tr id="search" onkeyup="search_butt()" onchange="search_butt()">
+                <td><input type="text" class="search" id="brand" disabled></td>
+                <td><input type="text" class="search" id="model" disabled></td>
+                <td><input type="text" class="search" id="sn" disabled></td>
+                <td><input type="text" class="search" id="date" disabled></td>
+                <td><input type="text" class="search" id="ref" disabled></td>
+            </tr>
+            <tr>
+                <tr><td colSpan="4">共&emsp;<span id="count">xx</span>&emsp;個符合的項目</td><td id="search_butt_td"></td></tr>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+</body>
+
+</html>
