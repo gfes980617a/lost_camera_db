@@ -12,7 +12,7 @@ function sql_string() {
     if (document.getElementById("search_limit").value != '0')
         sql += `\nLIMIT ${document.getElementById("search_limit").value}`;
     sql += ";";
-    document.getElementById("sql_code").innerHTML = sql;
+    document.getElementById("sql_code").value = sql;
     return sql;
 }
 function search_exec() {
